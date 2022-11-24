@@ -5,6 +5,7 @@
 
 1. Crear una cuenta de github.
 2. [Crear un token de desarrollador](https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) sin fecha límite (guardarlo en un lugar seguro)
+    - Picarle a todo lo que diga classic y NO beta
     - Este token se usa en vez de tu contraseña de usuario cuando tengas que loggearte fuera de github.com (al tratar de subir cambios se los va a pedir)
     - En el paso 7 solo marcar la primer casilla "repo"
 3. Aceptar invitación de colaboración
