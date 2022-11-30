@@ -5,18 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class ScenaController : MonoBehaviour
 {
-    public void LoadGame()
-    {
-        SceneManager.LoadScene("Game");
-    }
-    public void LoadMain()
+    public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }
-    public void LoadHowToPlay()
+    public void LoadMinijuegoObstaculos()
+    {
+        SceneManager.LoadScene("MinijuegoObstaculos");
+    }
+    public void LoadInstrucciones()
     {
         SceneManager.LoadScene("Instrucciones");
     }
+
     public void ExitGame()
     {
         Application.Quit(); //No sirve en editor

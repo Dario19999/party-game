@@ -9205,6 +9205,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1666125369}
+  - component: {fileID: 1666125371}
+  - component: {fileID: 1666125370}
   m_Layer: 0
   m_Name: Laberinto
   m_TagString: Untagged
