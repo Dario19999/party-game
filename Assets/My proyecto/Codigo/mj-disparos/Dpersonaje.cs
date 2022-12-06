@@ -47,7 +47,7 @@ public class Dpersonaje : MonoBehaviour
 
     private void OnDestroy()
     {
-        gameOver.SetActive(true);
+       
     }
 
 }

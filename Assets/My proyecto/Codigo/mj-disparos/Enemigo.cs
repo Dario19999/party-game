@@ -39,7 +39,9 @@ public class Enemigo : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(other.gameObject);               
+            Time.timeScale = 0f;
+            Destroy(other.gameObject);
+
         }
     }
 
