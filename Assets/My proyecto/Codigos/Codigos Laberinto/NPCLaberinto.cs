@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class NPCLaberinto : Interactable //Hereda
 {
 
-    private float tiempo = 60f;
     public TextMeshProUGUI lose;
     public TextMeshProUGUI win;
     public Image panel1;

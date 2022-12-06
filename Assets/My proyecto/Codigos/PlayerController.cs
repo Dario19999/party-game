@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private PlayerAnimation _playerAnimator;
 
     private bool _isRunning = true;
-    private float _maxMovementSpeed = 15f;
+    private float _maxMovementSpeed = 35f;
 
     // Start is called before the first frame update
     #region Puntuación
@@ -66,20 +66,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            _isRunning = !_isRunning;
-            if (_isRunning)
-            {
-                _MovementSpeed = _maxMovementSpeed;
-            }
-            else
-            {
-                _MovementSpeed = _maxMovementSpeed * 0.4f;
-            }
-
-        }
-
+        
+        _MovementSpeed = _maxMovementSpeed * 0.5f;
         #region Movimiento
         _horizontalInput = Input.GetAxis("Horizontal");//Teclas A, D: izquierda dererecha
         _forwardInput = Input.GetAxis("Vertical");//Teclas D, W: arriba abajo
