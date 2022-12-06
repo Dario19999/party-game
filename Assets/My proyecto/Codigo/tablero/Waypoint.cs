@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
-    Transform[] lista;
-    public List<Transform> casilla = new List<Transform>();
+    private Transform[] lista;
+    [SerializeField]
+    private List<Transform> casilla = new List<Transform>();
 
+    public List<Transform> getCasilla()
+    {
+        return casilla;
+    }
     // Update is called once per frame
     void Update()
     {
