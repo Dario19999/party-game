@@ -18,6 +18,11 @@ public class ScenaController : MonoBehaviour
         SceneManager.LoadScene("Instrucciones");
     }
 
+    public void LoadTablero()
+    {
+        SceneManager.LoadScene("PartyGame");
+    }
+
     public void ExitGame()
     {
         Application.Quit(); //No sirve en editor
