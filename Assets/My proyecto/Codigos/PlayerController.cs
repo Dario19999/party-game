@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private PlayerAnimation _playerAnimator;
 
     private bool _isRunning = true;
-    private float _maxMovementSpeed = 20f;
+    private float _maxMovementSpeed = 15f;
 
     // Start is called before the first frame update
     #region Puntuación
@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
             Debug.LogWarning("El jugador no tiene un componente de cuerpo rigido");
         }
         #endregion
+
         #region Obtener Animación
         _playerAnimator = GetComponentInChildren<PlayerAnimation>();
         if (_playerAnimator == null)
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
             Debug.LogWarning("El jugador no tiene animator");
         }
         #endregion
+
         if (_isRunning)
         {
             _MovementSpeed = _maxMovementSpeed;

@@ -5,9 +5,8 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-
+    private float tiempo = 60f;
     public TextMeshProUGUI contador;
-    private float tiempo = 50f;
     public TextMeshProUGUI lose;
     public TextMeshProUGUI win;
     public Image panel1;
@@ -25,6 +24,7 @@ public class Timer : MonoBehaviour
         panel2.gameObject.SetActive(false);
         botonGanar.gameObject.SetActive(false);
         botonSalir.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -32,6 +32,11 @@ public class Timer : MonoBehaviour
     {
         tiempo -= Time.deltaTime;
         contador.text = " " + tiempo.ToString("f0");
+
+        if (win.gameObject.activeSelf)
+        {
+            Time.timeScale = 0f;
+        }
 
         if (tiempo <= 0)
         {

@@ -7,9 +7,8 @@ using UnityEngine.UI;
 
 public class NPCLaberinto : Interactable //Hereda
 {
-    [SerializeField]
-    private string _name;
 
+    private float tiempo = 60f;
     public TextMeshProUGUI lose;
     public TextMeshProUGUI win;
     public Image panel1;
@@ -36,4 +35,6 @@ public class NPCLaberinto : Interactable //Hereda
         botonGanar.gameObject.SetActive(true);
 
     }
+
+
 }
