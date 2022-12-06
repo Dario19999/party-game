@@ -13,9 +13,14 @@ public class ScenaController : MonoBehaviour
     {
         SceneManager.LoadScene("MinijuegoObstaculos");
     }
-    public void LoadInstrucciones()
+    public void LoadInstruccionesObstaculos()
     {
-        SceneManager.LoadScene("Instrucciones");
+        SceneManager.LoadScene("InstruccionesObstaculos");
+    }
+
+    public void LoadTablero()
+    {
+        SceneManager.LoadScene("PartyGame");
     }
 
     public void ExitGame()

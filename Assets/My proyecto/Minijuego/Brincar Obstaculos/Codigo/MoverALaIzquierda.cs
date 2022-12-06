@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoverALaIzquierda : MonoBehaviour
 {
-    private float velocidad = 20;
+    private float velocidad = 17;
     private ControlJugador scriptControlJugador;
     private float limiteIzquierdo = -15;
     void Start()

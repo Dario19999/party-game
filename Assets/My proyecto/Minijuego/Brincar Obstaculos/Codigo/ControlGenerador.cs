@@ -24,7 +24,15 @@ public class ControlGenerador : MonoBehaviour
 
     void GeneraObstaculo()
     {
-        intervaloRepeticion = Random.Range(1.5f, 3); //Le damos un valor aleatorio entre 1.5 y 3 segundos+
+        if (_tiempo < 500 )
+        {
+            intervaloRepeticion = Random.Range(2f, 3f); //Le damos un valor aleatorio entre 2 y 3 segundos+
+        }
+        if (_tiempo > 500)
+        {
+            intervaloRepeticion = Random.Range(1f, 1.5f); //Le damos un valor aleatorio entre 1 y 1.5 segundos+
+        }
+
         if (!scriptControlJugador.gameOver) //Si el jugador no a muerto entonces;
         {
             if (_tiempo < 900)
