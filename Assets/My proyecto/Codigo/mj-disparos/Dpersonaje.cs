@@ -91,7 +91,7 @@ public class Dpersonaje : MonoBehaviour
             panel1.gameObject.SetActive(true);
             panel2.gameObject.SetActive(true);
             lose.gameObject.SetActive(true);
-            botonSalir.gameObject.SetActive(true);
+            botonSalir.gameObject.SetActive(true); 
         }
     }
     
