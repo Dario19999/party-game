@@ -9,6 +9,11 @@ public class ScenaController : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void LoadInstrucciones()
+    {
+        SceneManager.LoadScene("Instrucciones");
+    }
+
     public void LoadMinijuegoObstaculos()
     {
         SceneManager.LoadScene("MinijuegoObstaculos");
