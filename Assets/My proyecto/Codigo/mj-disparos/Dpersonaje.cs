@@ -69,7 +69,7 @@ public class Dpersonaje : MonoBehaviour
         tiempo -= Time.deltaTime;
         contador.text = " " + tiempo.ToString("f0");
 
-        if (tiempo <= 0 || cuenta >= 2)
+        if (tiempo <= 0 || cuenta >= 15)
         {
             Time.timeScale = 0f;
             contador.text = "0";

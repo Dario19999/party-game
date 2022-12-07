@@ -24,11 +24,14 @@ EditorBuildSettings:
     path: Assets/My proyecto/Escenas/InstruccionesLaberinto.unity
     guid: 4a5637b3ac687dd4b82faf3c4f68d86e
   - enabled: 1
-    path: Assets/My proyecto/Escenas/Disparador.unity
-    guid: 2e5ed2e1551617d43b54dafb60e8b92e
-  - enabled: 1
     path: Assets/My proyecto/Escenas/Laberinto.unity
     guid: 93d17321a809bca47b539a2064768fda
+  - enabled: 1
+    path: Assets/My proyecto/Escenas/InstruccionesDisparador.unity
+    guid: f72b9eaa7408b0d49a2929158831323c
+  - enabled: 1
+    path: Assets/My proyecto/Escenas/Disparador.unity
+    guid: 2e5ed2e1551617d43b54dafb60e8b92e
   - enabled: 0
     path: Assets/My proyecto/Escenas/Game.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab

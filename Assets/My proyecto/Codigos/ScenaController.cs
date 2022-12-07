@@ -33,6 +33,11 @@ public class ScenaController : MonoBehaviour
         SceneManager.LoadScene("Disparador");
     }
 
+    public void LoadInstruccionesDisparador()
+    {
+        SceneManager.LoadScene("InstruccionesDisparador");
+    }
+
     public void ExitGame()
     {
         Application.Quit(); //No sirve en editor

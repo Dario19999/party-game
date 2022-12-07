@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemigospawner : MonoBehaviour
+public class Enemigospawner : MonoBehaviour
 {
     [SerializeField] //Mostrar en pantalla las caracteristicas
     private Vector2 tiempoRandom;
