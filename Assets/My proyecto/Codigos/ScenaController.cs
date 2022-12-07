@@ -22,10 +22,14 @@ public class ScenaController : MonoBehaviour
     {
         SceneManager.LoadScene("PartyGame");
     }
-
     public void LoadLaberinto()
     {
         SceneManager.LoadScene("Laberinto");
+    }
+
+    public void LoadDisparador()
+    {
+        SceneManager.LoadScene("Disparador");
     }
 
     public void ExitGame()

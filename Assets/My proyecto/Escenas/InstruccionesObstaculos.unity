@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 1124848601}
   - component: {fileID: 1124848600}
   m_Layer: 5
-  m_Name: ButtonPerder
+  m_Name: ButtonContinuar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -691,8 +691,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Continuar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1e7dbdcc4c72b334b8f5ca6bd98399d0, type: 2}
-  m_sharedMaterial: {fileID: 5650682937728830959, guid: 1e7dbdcc4c72b334b8f5ca6bd98399d0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a6f11e6f2e722ec439ae9fb7d767bf8e, type: 2}
+  m_sharedMaterial: {fileID: 8390642549427019210, guid: a6f11e6f2e722ec439ae9fb7d767bf8e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
