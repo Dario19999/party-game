@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2168,14 +2168,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f4b6e1f6a159b41bea5b2e0f5159ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rbJugador: {fileID: 0}
   fuerzaSalto: 700
   modificadorGravedad: 2
   estaEnElSuelo: 1
   gameOver: 0
+  animJugador: {fileID: 0}
   Explosion: {fileID: 1656845633}
   polvadera: {fileID: 382701672}
   sonidoSalto: {fileID: 8300000, guid: 113ee460fadc340e4957a7404a9fbb27, type: 3}
   sonidoChoque: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
+  sonidoJugador: {fileID: 0}
   _puntaje: 0
   puntuacion: {fileID: 1115864705}
   lose: {fileID: 611514908}

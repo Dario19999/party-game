@@ -5,13 +5,21 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    [SerializeField]
     private float tiempo = 60f;
+    [SerializeField] 
     private TextMeshProUGUI contador;
+    [SerializeField] 
     private TextMeshProUGUI lose;
+    [SerializeField] 
     private TextMeshProUGUI win;
+    [SerializeField] 
     private Image panel1;
+    [SerializeField] 
     private Image panel2;
+    [SerializeField] 
     private Button botonGanar;
+    [SerializeField] 
     private Button botonSalir;
 
     // Use this for initialization
