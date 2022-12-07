@@ -35,12 +35,4 @@ public class Enemigo : MonoBehaviour
         agente.SetDestination(objetivo.position);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Destroy(other.gameObject);               
-        }
-    }
-
 }

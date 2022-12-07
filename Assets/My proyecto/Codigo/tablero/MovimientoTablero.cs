@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class MovimientoTablero : MonoBehaviour
 {
-    public Waypoint Rott;
-
-    public Image ObjectwithImage;
-    public Sprite[] images;
-    public int num;
+    [SerializeField]
+    private Waypoint Rott;
+    [SerializeField]
+    private Image ObjectwithImage;
+    [SerializeField]
+    private Sprite[] images;
+    [SerializeField]
+    private int _num;
 
 
     int rpposicion;
@@ -25,17 +28,14 @@ public class MovimientoTablero : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !movimie)
         {
-            num = Random.Range(0, images.Length);
-            ObjectwithImage.sprite = images[num];
+            _num = Random.Range(0, images.Length);
+            ObjectwithImage.sprite = images[_num];
 
 
-            Debug.Log("Dado: " + images[num]);
-            if (rpposicion + num < Rott.casilla.Count)
+            Debug.Log("Dado: " + images[_num]);
+            if (rpposicion + _num < Rott.getCasilla().Count)
             {
                 StartCoroutine(Move());
-            }
-            else
-            {
             }
         }
     }
@@ -47,13 +47,29 @@ public class MovimientoTablero : MonoBehaviour
             yield break;
         }
         movimie = true;
-        while (num > -1)
+        while (_num > -1)
         {
-            Vector3 nextPos = Rott.casilla[rpposicion + 0].position;
+            Vector3 nextPos = Rott.getCasilla()[rpposicion].position;
             while (MoveToNexNode(nextPos)) { yield return null; }
             yield return new WaitForSeconds(0.1f);
-            num--;
+            _num--;
             rpposicion++;
+            if(rpposicion == 3)
+            {
+                transform.Rotate(0, 90, 0);
+            }
+            else if (rpposicion == 10)
+            {
+                transform.Rotate(0, 90, 0);
+            }
+            else if (rpposicion == 17)
+            {
+                transform.Rotate(0, 90, 0);
+            }
+            else if (rpposicion == 24)
+            {
+                transform.Rotate(0, 90, 0);
+            }
         }
         movimie = false;
     }

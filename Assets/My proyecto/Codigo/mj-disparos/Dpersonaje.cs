@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Dpersonaje : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class Dpersonaje : MonoBehaviour
     Vector3 movimiento = Vector3.zero;
     [SerializeField] //Mostrar en pantalla las caracteristicas
     private Animator animaciones;
-    [SerializeField] //Mostrar en pantalla las caracteristicas
-    private Text txtMuertes;
+    
+    
 
     [SerializeField] //Mostrar en pantalla las caracteristicas
     private Transform grafico;
@@ -24,9 +25,31 @@ public class Dpersonaje : MonoBehaviour
     [SerializeField] //Mostrar en pantalla las caracteristicas
     private Transform cañon;
 
+    [Header("Graficos")]
+    [SerializeField] //Mostrar en pantalla las caracteristicas
+    private TextMeshProUGUI Muertes;
+    [SerializeField] //Mostrar en pantalla las caracteristicas
     public static int cuenta = 0;
-    public GameObject gameOver;
-    
+    public TextMeshProUGUI contador;
+    public float tiempo = 60f;
+    public TextMeshProUGUI lose;
+    public TextMeshProUGUI win;
+    public Image panel1;
+    public Image panel2;
+    public Button botonGanar;
+    public Button botonSalir;
+
+    private void Start()
+    {
+        contador.text = " " + tiempo;
+        win.gameObject.SetActive(false);
+        lose.gameObject.SetActive(false);
+        panel1.gameObject.SetActive(false);
+        panel2.gameObject.SetActive(false);
+        botonGanar.gameObject.SetActive(false);
+        botonSalir.gameObject.SetActive(false);
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -41,13 +64,36 @@ public class Dpersonaje : MonoBehaviour
             Instantiate(bala, cañon.position, cañon.rotation);
         }
 
-        txtMuertes.text = cuenta.ToString("00");
+        Muertes.text = "Puntuación: " + cuenta.ToString("00");
+
+        tiempo -= Time.deltaTime;
+        contador.text = " " + tiempo.ToString("f0");
+
+        if (tiempo <= 0 || cuenta >= 2)
+        {
+            Time.timeScale = 0f;
+            contador.text = "0";
+            Muertes.text = "Puntuación Final: " + cuenta.ToString("00");
+            panel1.gameObject.SetActive(true);
+            panel2.gameObject.SetActive(true);
+            win.gameObject.SetActive(true);
+            botonGanar.gameObject.SetActive(true);
+            
+        }
 
     }
 
-    private void OnDestroy()
+    private void OnTriggerEnter(Collider other)
     {
-        gameOver.SetActive(true);
+        if (other.CompareTag("Enemigo"))
+        {
+            Time.timeScale = 0f;
+            panel1.gameObject.SetActive(true);
+            panel2.gameObject.SetActive(true);
+            lose.gameObject.SetActive(true);
+            botonSalir.gameObject.SetActive(true); 
+        }
     }
+    
 
 }

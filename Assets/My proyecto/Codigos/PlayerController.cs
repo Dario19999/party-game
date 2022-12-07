@@ -12,29 +12,15 @@ public class PlayerController : MonoBehaviour
     private float _horizontalInput, _forwardInput;
     #endregion
 
-    #region Variable Brinco
-    [SerializeField] //Mostrar en pantalla las caracteristicas
-    private bool _jumpRequest = false;
-    [SerializeField] //Mostrar en pantalla las caracteristicas
-    private float _jumpForce = 10;
-    [SerializeField] //Mostrar en pantalla las caracteristicas
-    private int _maxJumps =2, _availableJumps = 0;
-    #endregion
-
     private Rigidbody _PlayerRB;
 
     private PlayerAnimation _playerAnimator;
 
     private bool _isRunning = true;
-    private float _maxMovementSpeed = 20f;
+    private float _maxMovementSpeed = 21f;
 
     // Start is called before the first frame update
-    #region Puntuación
-    [SerializeField]
-    private int _puntaje = 1;
-    [SerializeField]
-    private TextMeshProUGUI puntuacion;
-    #endregion
+
     private void Start()
     {
         #region Rigidbody
@@ -44,6 +30,7 @@ public class PlayerController : MonoBehaviour
             Debug.LogWarning("El jugador no tiene un componente de cuerpo rigido");
         }
         #endregion
+
         #region Obtener Animación
         _playerAnimator = GetComponentInChildren<PlayerAnimation>();
         if (_playerAnimator == null)
@@ -51,6 +38,7 @@ public class PlayerController : MonoBehaviour
             Debug.LogWarning("El jugador no tiene animator");
         }
         #endregion
+
         if (_isRunning)
         {
             _MovementSpeed = _maxMovementSpeed;
@@ -64,20 +52,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            _isRunning = !_isRunning;
-            if (_isRunning)
-            {
-                _MovementSpeed = _maxMovementSpeed;
-            }
-            else
-            {
-                _MovementSpeed = _maxMovementSpeed * 0.4f;
-            }
-
-        }
-
+        
+        _MovementSpeed = _maxMovementSpeed * 0.5f;
         #region Movimiento
         _horizontalInput = Input.GetAxis("Horizontal");//Teclas A, D: izquierda dererecha
         _forwardInput = Input.GetAxis("Vertical");//Teclas D, W: arriba abajo
@@ -89,37 +65,16 @@ public class PlayerController : MonoBehaviour
 
         _playerAnimator.setSpeed(velocity);
 
-
-        #region Petición Brinco
-        if (Input.GetKeyDown(KeyCode.Space) && _availableJumps > 0)
-        {
-            _jumpRequest = true;
-        }
-        #endregion
-
     }
 
     private void FixedUpdate()
     {
-        #region Brinco
-        if (_jumpRequest)
-        {
-            _availableJumps--;
-            Debug.Log("El jugador brinco");
-            _PlayerRB.velocity = Vector3.up * _jumpForce;
-            _jumpRequest = false;
-        }
-        #endregion
+
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        #region Colision
-        if (other.gameObject.CompareTag("Piso"))
-        {
-            _availableJumps = _maxJumps;
-        }
-        #endregion
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -140,11 +95,4 @@ public class PlayerController : MonoBehaviour
             }
         }
     } 
-    public void UpdatePuntos(int puntos)
-    {
-        _puntaje = _puntaje + puntos;
-        puntuacion.text = "Puntuación: " + _puntaje;
-        Debug.Log("tienes " + _puntaje + " puntos");
-    }
-
 }
