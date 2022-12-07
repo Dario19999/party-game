@@ -34,7 +34,7 @@ public class ScenaController : MonoBehaviour
 
     public void LoadInstruccionesPong()
     {
-        SceneManager.LoadScene("InstruccionesPong");
+        SceneManager.LoadScene("IntruccionesPong");
     }
 
     public void LoadDisparador()
