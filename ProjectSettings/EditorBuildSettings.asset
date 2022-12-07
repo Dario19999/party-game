@@ -32,6 +32,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/My proyecto/Escenas/disparador.unity
     guid: 2e5ed2e1551617d43b54dafb60e8b92e
+  - enabled: 1
+    path: Assets/My proyecto/Minijuego Mel/Escenas/IntruccionesPong.unity
+    guid: a185b867198c831469784abe57936856
+  - enabled: 1
+    path: Assets/My proyecto/Minijuego Mel/Escenas/Pong.unity
+    guid: ef3e26d4061b37b448826eb9c108681a
   - enabled: 0
     path: Assets/My proyecto/Escenas/Game.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
