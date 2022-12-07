@@ -5,21 +5,22 @@ using UnityEngine;
 public class Dproyectil : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] //Mostrar en pantalla las caracteristicas
+    [SerializeField] 
     private Rigidbody rb;
-    [SerializeField] //Mostrar en pantalla las caracteristicas
+    [SerializeField] 
     private float VelocidadInicial;
-    [SerializeField] //Mostrar en pantalla las caracteristicas
+    [SerializeField] 
     private float daño;
 
     void Start()
     {
-        rb.velocity = VelocidadInicial * transform.forward;
+        rb.velocity = VelocidadInicial * transform.forward; // movimiento recto de la bala
 
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 4); //destruccion del objecto en 4 seg
 
     }
 
+    //si colision con un objecto que tiene vida hace daño
     private void OnTriggerEnter(Collider other)
     {
         Vida v = other.GetComponent<Vida>();
