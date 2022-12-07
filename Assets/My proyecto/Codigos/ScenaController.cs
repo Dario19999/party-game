@@ -22,7 +22,6 @@ public class ScenaController : MonoBehaviour
     {
         SceneManager.LoadScene("PartyGame");
     }
-
     public void LoadLaberinto()
     {
         SceneManager.LoadScene("Laberinto");
