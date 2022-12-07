@@ -42,6 +42,11 @@ public class ScenaController : MonoBehaviour
         SceneManager.LoadScene("InstruccionesDisparador");
     }
 
+    public void LoadInstruccionesLaberinto()
+    {
+        SceneManager.LoadScene("InstruccionesLaberinto");
+    }
+
     public void ExitGame()
     {
         Application.Quit(); //No sirve en editor

@@ -5276,12 +5276,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98863b854c997c245b135740a5aa4364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lose: {fileID: 0}
-  win: {fileID: 0}
-  panel1: {fileID: 0}
-  panel2: {fileID: 0}
-  botonGanar: {fileID: 0}
-  botonSalir: {fileID: 0}
+  lose: {fileID: 1229324231}
+  win: {fileID: 1935325520}
+  panel1: {fileID: 1487686045}
+  panel2: {fileID: 361225017}
+  botonGanar: {fileID: 2059013824}
+  botonSalir: {fileID: 1649907311}
 --- !u!1 &910045979
 GameObject:
   m_ObjectHideFlags: 0
