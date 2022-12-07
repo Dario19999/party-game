@@ -49,6 +49,7 @@ public class ControlJugador : MonoBehaviour
     [SerializeField] 
     private Button botonSalir;
 
+
     void Start()
     {
         rbJugador = GetComponent<Rigidbody>();
@@ -90,8 +91,10 @@ public class ControlJugador : MonoBehaviour
             panel2.gameObject.SetActive(true);
             win.gameObject.SetActive(true);
             botonGanar.gameObject.SetActive(true);
+            Scoring.minijuegosGanados += 1;
         }    
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Suelo")) //si el objeto tiene la etiqueta suelo entonces
@@ -112,7 +115,7 @@ public class ControlJugador : MonoBehaviour
             panel.gameObject.SetActive(true);
             panel2.gameObject.SetActive(true);
             lose.gameObject.SetActive(true);
-            botonSalir.gameObject.SetActive(true);
+            botonSalir.gameObject.SetActive(true); 
         }   
     }
 }
