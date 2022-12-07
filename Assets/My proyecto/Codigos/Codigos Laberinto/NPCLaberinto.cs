@@ -8,12 +8,12 @@ using UnityEngine.UI;
 public class NPCLaberinto : Interactable //Hereda
 {
 
-    public TextMeshProUGUI lose;
-    public TextMeshProUGUI win;
-    public Image panel1;
-    public Image panel2;
-    public Button botonGanar;
-    public Button botonSalir;
+    private TextMeshProUGUI lose;
+    private TextMeshProUGUI win;
+    private Image panel1;
+    private Image panel2;
+    private Button botonGanar;
+    private Button botonSalir;
 
     private void Start()
     {

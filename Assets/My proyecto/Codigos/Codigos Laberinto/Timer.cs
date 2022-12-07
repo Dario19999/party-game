@@ -6,13 +6,13 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     private float tiempo = 60f;
-    public TextMeshProUGUI contador;
-    public TextMeshProUGUI lose;
-    public TextMeshProUGUI win;
-    public Image panel1;
-    public Image panel2;
-    public Button botonGanar;
-    public Button botonSalir;
+    private TextMeshProUGUI contador;
+    private TextMeshProUGUI lose;
+    private TextMeshProUGUI win;
+    private Image panel1;
+    private Image panel2;
+    private Button botonGanar;
+    private Button botonSalir;
 
     // Use this for initialization
     void Start()
