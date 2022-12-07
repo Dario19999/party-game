@@ -73,7 +73,7 @@ public class Dpersonaje : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(bala, cañon.position, cañon.rotation);  //incializacion de la bala
-            sonidojuego.PlayOneShot(sonidodisparo, 1.0f);       //sonido al disparar
+            sonidojuego.PlayOneShot(sonidodisparo, 0.03f);       //sonido al disparar
         }
 
         Muertes.text = "Puntuación: " + cuenta.ToString("00");  //actualiza puntuacion
