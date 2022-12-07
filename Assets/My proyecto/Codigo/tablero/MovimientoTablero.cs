@@ -43,8 +43,8 @@ public class MovimientoTablero : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            PlayerPrefs.SetInt("mj_1_state", 0);
-            PlayerPrefs.SetInt("mj_2_state", 0);
+            PlayerPrefs.SetInt("mj_1_state", 1);
+            PlayerPrefs.SetInt("mj_2_state", 1);
             PlayerPrefs.SetInt("mj_3_state", 0);
             PlayerPrefs.SetInt("mj_4_state", 0);
             Debug.Log("backspace");
@@ -108,7 +108,7 @@ public class MovimientoTablero : MonoBehaviour
             {
                 mj_4_jugado = 1;
                 saveMGState("mj_4_state", mj_4_jugado);
-                escenaLoader.LoadPong();
+                escenaLoader.LoadInstruccionesPong();
             }
         }
     }
