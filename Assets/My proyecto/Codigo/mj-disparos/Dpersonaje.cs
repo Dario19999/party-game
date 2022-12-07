@@ -7,42 +7,53 @@ using TMPro;
 public class Dpersonaje : MonoBehaviour
 {
     // Start is called before the first frame update
+    [Header("Jugador")]
     [SerializeField] //Mostrar en pantalla las caracteristicas
     private float velocidad;
+    [SerializeField] //Mostrar en pantalla las caracteristicas
     private float velRotacion = 90;
     Vector3 movimiento = Vector3.zero;
     [SerializeField] //Mostrar en pantalla las caracteristicas
     private Animator animaciones;
-    
-    
 
-    [SerializeField] //Mostrar en pantalla las caracteristicas
+    [SerializeField]
     private Transform grafico;
 
     [Header("Disparos")]
-    [SerializeField] //Mostrar en pantalla las caracteristicas
+    [SerializeField] 
     private GameObject bala;
-    [SerializeField] //Mostrar en pantalla las caracteristicas
+    [SerializeField] 
     private Transform cañon;
 
-    [Header("Graficos")]
-    [SerializeField] //Mostrar en pantalla las caracteristicas
+    [Header("Graficos y Sonido")]
+    [SerializeField]
+    private AudioClip sonidodisparo;
+    private AudioSource sonidojuego;
+    [SerializeField] 
     private TextMeshProUGUI Muertes;
-    [SerializeField] //Mostrar en pantalla las caracteristicas
     public static int cuenta = 0;
-    public TextMeshProUGUI contador;
-    public float tiempo = 60f;
-    public TextMeshProUGUI lose;
-    public TextMeshProUGUI win;
-    public Image panel1;
-    public Image panel2;
-    public Button botonGanar;
-    public Button botonSalir;
+    [SerializeField]
+    private TextMeshProUGUI contador;
+    [SerializeField]
+    private float tiempo = 60f;
+    [SerializeField]
+    private TextMeshProUGUI lose;
+    [SerializeField]
+    private TextMeshProUGUI win;
+    [SerializeField]
+    private Image panel1;
+    [SerializeField]
+    private Image panel2;
+    [SerializeField]
+    private Button botonGanar;
+    [SerializeField]
+    private Button botonSalir;
 
     private void Start()
     {
-        contador.text = " " + tiempo;
-        win.gameObject.SetActive(false);
+        contador.text = " " + tiempo;               //impresion del tiempo en contador
+        sonidojuego = GetComponent<AudioSource>();  //obtiene el componente audio
+        win.gameObject.SetActive(false);        //desactiva graficos
         lose.gameObject.SetActive(false);
         panel1.gameObject.SetActive(false);
         panel2.gameObject.SetActive(false);
@@ -55,21 +66,22 @@ public class Dpersonaje : MonoBehaviour
     void Update()
     {
         movimiento.x = Input.GetAxis("Horizontal");
-        movimiento.z = Input.GetAxis("Vertical");
+        movimiento.z = Input.GetAxis("Vertical");   
         transform.Translate(0, 0, movimiento.z * velocidad * Time.deltaTime);
-        transform.Rotate(0, movimiento.x * velRotacion * Time.deltaTime, 0);
-        animaciones.SetBool("caminando", movimiento.magnitude > 0.2f);
+        transform.Rotate(0, movimiento.x * velRotacion * Time.deltaTime, 0); //movimiento
+        animaciones.SetBool("caminando", movimiento.magnitude > 0.2f);      //animacion
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(bala, cañon.position, cañon.rotation);
+            Instantiate(bala, cañon.position, cañon.rotation);  //incializacion de la bala
+            sonidojuego.PlayOneShot(sonidodisparo, 1.0f);       //sonido al disparar
         }
 
-        Muertes.text = "Puntuación: " + cuenta.ToString("00");
+        Muertes.text = "Puntuación: " + cuenta.ToString("00");  //actualiza puntuacion
 
-        tiempo -= Time.deltaTime;
-        contador.text = " " + tiempo.ToString("f0");
+        tiempo -= Time.deltaTime;                       //contador de tiempo inverso
+        contador.text = " " + tiempo.ToString("f0");    //impresion del contador
 
-        if (tiempo <= 0 || cuenta >= 15)
+        if (tiempo <= 0 || cuenta >= 15)        //forma de ganar
         {
             Time.timeScale = 0f;
             contador.text = "0";
@@ -85,7 +97,7 @@ public class Dpersonaje : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemigo"))
+        if (other.CompareTag("Enemigo"))    //forma de perder
         {
             Time.timeScale = 0f;
             panel1.gameObject.SetActive(true);

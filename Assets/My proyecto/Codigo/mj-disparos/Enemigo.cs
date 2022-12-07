@@ -5,13 +5,14 @@ using UnityEngine.AI;
 
 public class Enemigo : MonoBehaviour
 {
-    [SerializeField] //Mostrar en pantalla las caracteristicas
+    [SerializeField] 
     private Transform objetivo;
-    [SerializeField] //Mostrar en pantalla las caracteristicas
+    [SerializeField] 
     private NavMeshAgent agente;
 
 
     // Start is called before the first frame update
+    //busca enemigo con tag player si no existe se destruye, si existe se vuelve objetivo
     void Start()
     {
         GameObject g = GameObject.FindGameObjectWithTag("Player");
@@ -26,6 +27,8 @@ public class Enemigo : MonoBehaviour
     }
 
     // Update is called once per frame
+    //si no tenemos objetivo sale de la funcion, si lo tenemos por medio del agente de 
+    //nagevacion lo movemos hacia el objetivo.
     void Update()
     {
         if(objetivo == null)

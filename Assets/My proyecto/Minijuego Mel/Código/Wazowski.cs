@@ -16,17 +16,26 @@ public class Wazowski : MonoBehaviour
     [SerializeField]
     private int jugador2Score;
 
+
     public Vector3 spawnPoint;
 
-   // public TextMeshProUGUI Jugador1Text;
-    //public TextMeshProUGUI Jugador2Text;
+    [SerializeField]
+    private TextMeshProUGUI Jugador1Text;
+    [SerializeField]
+    private TextMeshProUGUI Jugador2Text;
 
-    /*public TextMeshProUGUI lose;
-    public TextMeshProUGUI win;
-    public Image panel;
-    public Image panel2;
-    public Button botonGanar;
-    public Button botonSalir;*/
+    [SerializeField]
+    private TextMeshProUGUI lose;
+    [SerializeField]
+    private TextMeshProUGUI win;
+    [SerializeField]
+    private Image panel;
+    [SerializeField]
+    private Image panel2;
+    [SerializeField]
+    private Button botonGanar;
+    [SerializeField]
+    private Button botonSalir;
 
     // Start is called before the first frame update
     void Start()
@@ -35,39 +44,38 @@ public class Wazowski : MonoBehaviour
         jugador2Score = 0;
 
         this.rb = GetComponent<Rigidbody>();
-        this.direction = new Vector3(0.5f, 0f, 0.5f);
+        this.direction = new Vector3(1f, 0f, 1f);
 
-       /* win.gameObject.SetActive(false);
+       win.gameObject.SetActive(false);
         lose.gameObject.SetActive(false);
         panel.gameObject.SetActive(false);
         panel2.gameObject.SetActive(false);
         botonGanar.gameObject.SetActive(false);
-        botonSalir.gameObject.SetActive(false);*/
+        botonSalir.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //this.transform.position += direction * speed;
         this.transform.position += direction * speed * Time.deltaTime;
-        //Jugador1Text.text = jugador1Score.ToString();
-        //Jugador2Text.text = jugador2Score.ToString();
+        Jugador1Text.text = jugador1Score.ToString();
+        Jugador2Text.text = jugador2Score.ToString();
 
         if (jugador1Score == 3)
         {
             Time.timeScale = 0f;
-            /*panel.gameObject.SetActive(true);
+            panel.gameObject.SetActive(true);
             panel2.gameObject.SetActive(true);
             win.gameObject.SetActive(true);
-            botonGanar.gameObject.SetActive(true);*/
+            botonGanar.gameObject.SetActive(true);
         }
         if (jugador2Score == 3)
         {
            Time.timeScale = 0f;
-            /*panel.gameObject.SetActive(true);
+            panel.gameObject.SetActive(true);
             panel2.gameObject.SetActive(true);
             lose.gameObject.SetActive(true);
-            botonSalir.gameObject.SetActive(true);*/
+            botonSalir.gameObject.SetActive(true);
         }
 
     }

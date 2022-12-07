@@ -14,21 +14,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/My proyecto/Escenas/PartyGame.unity
     guid: a4d12a3c0616bb840afbef4bd01709d1
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/My proyecto/Escenas/InstruccionesObstaculos.unity
+    guid: 982823c26d281de4d9e296e2cca57ddd
   - enabled: 1
     path: Assets/My proyecto/Escenas/MinijuegoObstaculos.unity
     guid: dc8c9f3efd746429fa6f9482dc779492
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/My proyecto/Escenas/InstruccionesLaberinto.unity
+    guid: 4a5637b3ac687dd4b82faf3c4f68d86e
   - enabled: 1
     path: Assets/My proyecto/Escenas/Laberinto.unity
     guid: 93d17321a809bca47b539a2064768fda
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/My proyecto/Escenas/InstruccionesDisparador.unity
+    guid: f72b9eaa7408b0d49a2929158831323c
   - enabled: 1
     path: Assets/My proyecto/Escenas/disparador.unity
     guid: 2e5ed2e1551617d43b54dafb60e8b92e
