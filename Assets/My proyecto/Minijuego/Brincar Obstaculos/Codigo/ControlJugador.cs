@@ -6,32 +6,48 @@ using UnityEngine.UI;
 
 public class ControlJugador : MonoBehaviour
 {
-
+    [SerializeField]
     private Rigidbody rbJugador;
 
-    public float fuerzaSalto = 10;
-    public float modificadorGravedad = 2;
-    public bool estaEnElSuelo = true;
+    [SerializeField]
+    private float fuerzaSalto = 10;
+    [SerializeField]
+    private float modificadorGravedad = 2;
+    [SerializeField]
+    private bool estaEnElSuelo = true;
     public bool gameOver; //En automatico es falso
 
+    [SerializeField]
     private Animator animJugador;
+    
+    [SerializeField]
+    private ParticleSystem Explosion;
+    [SerializeField]
+    private ParticleSystem polvadera;
 
-    public ParticleSystem Explosion;
-
-    public ParticleSystem polvadera;
-
-    public AudioClip sonidoSalto;
-    public AudioClip sonidoChoque;
+    [SerializeField]
+    private AudioClip sonidoSalto;
+    [SerializeField]
+    private AudioClip sonidoChoque;
+    [SerializeField] 
     private AudioSource sonidoJugador;
 
-    public int _puntaje = 0;
-    public TextMeshProUGUI puntuacion;
-    public TextMeshProUGUI lose;
-    public TextMeshProUGUI win;
-    public Image panel;
-    public Image panel2;
-    public Button botonGanar;
-    public Button botonSalir;
+    [SerializeField]
+    private int _puntaje = 0;
+    [SerializeField]
+    private TextMeshProUGUI puntuacion;
+    [SerializeField] 
+    private TextMeshProUGUI lose;
+    [SerializeField] 
+    private TextMeshProUGUI win;
+    [SerializeField] 
+    private Image panel;
+    [SerializeField] 
+    private Image panel2;
+    [SerializeField] 
+    private Button botonGanar;
+    [SerializeField] 
+    private Button botonSalir;
 
     void Start()
     {
@@ -64,7 +80,7 @@ public class ControlJugador : MonoBehaviour
             _puntaje = _puntaje + 1; //incrementa el puntaje uno en uno
             puntuacion.text = "Puntuación: " + _puntaje.ToString(); //Actualiza el text los puntos en vivo
         }
-        if(_puntaje == 1000)
+        if(_puntaje == 2000)
         {
             //Debug.Log("Ganaste"); //Desplagiega un mensaje
             gameOver = true;
