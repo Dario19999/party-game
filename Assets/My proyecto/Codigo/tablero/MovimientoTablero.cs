@@ -43,8 +43,8 @@ public class MovimientoTablero : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            PlayerPrefs.SetInt("mj_1_state", 1);
-            PlayerPrefs.SetInt("mj_2_state", 1);
+            PlayerPrefs.SetInt("mj_1_state", 0);
+            PlayerPrefs.SetInt("mj_2_state", 0);
             PlayerPrefs.SetInt("mj_3_state", 0);
             PlayerPrefs.SetInt("mj_4_state", 0);
             Debug.Log("backspace");

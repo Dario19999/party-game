@@ -87,11 +87,13 @@ public class ControlJugador : MonoBehaviour
             gameOver = true;
             polvadera.Stop(); //Detener animacion de polvo
             puntuacion.text = "Puntuación final " + _puntaje;
+
+            Scoring.minijuegosGanados += 1;
+
             panel.gameObject.SetActive(true);
             panel2.gameObject.SetActive(true);
             win.gameObject.SetActive(true);
             botonGanar.gameObject.SetActive(true);
-            Scoring.minijuegosGanados += 1;
         }    
     }
 

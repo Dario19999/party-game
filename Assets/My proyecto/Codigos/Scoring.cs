@@ -50,10 +50,6 @@ public class Scoring : MonoBehaviour
             Debug.Log("Ganó 1");
             medallabronce.gameObject.SetActive(true);
         }
-        else if (minijuegosGanados == 0)
-        {
-            Debug.Log("No ganó ningún juego");
-            loser.gameObject.SetActive(true);
-        }
+        
     }
 }
