@@ -90,7 +90,7 @@ public class MovimientoTablero : MonoBehaviour
             {
                 mj_2_jugado = 1;
                 saveMGState("mj_2_state", mj_2_jugado);
-                escenaLoader.LoadLaberinto();
+                escenaLoader.LoadInstruccionesLaberinto();
             }
         }
         if (collision.gameObject.CompareTag("mj_3"))
@@ -108,7 +108,7 @@ public class MovimientoTablero : MonoBehaviour
             {
                 mj_4_jugado = 1;
                 saveMGState("mj_4_state", mj_4_jugado);
-                escenaLoader.LoadPong();
+                escenaLoader.LoadInstruccionesPong();
             }
         }
     }

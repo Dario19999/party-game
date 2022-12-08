@@ -49,6 +49,7 @@ public class ControlJugador : MonoBehaviour
     [SerializeField] 
     private Button botonSalir;
 
+
     void Start()
     {
         rbJugador = GetComponent<Rigidbody>();
@@ -86,12 +87,16 @@ public class ControlJugador : MonoBehaviour
             gameOver = true;
             polvadera.Stop(); //Detener animacion de polvo
             puntuacion.text = "Puntuación final " + _puntaje;
+
+            Scoring.minijuegosGanados += 1;
+
             panel.gameObject.SetActive(true);
             panel2.gameObject.SetActive(true);
             win.gameObject.SetActive(true);
             botonGanar.gameObject.SetActive(true);
         }    
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Suelo")) //si el objeto tiene la etiqueta suelo entonces
@@ -112,7 +117,7 @@ public class ControlJugador : MonoBehaviour
             panel.gameObject.SetActive(true);
             panel2.gameObject.SetActive(true);
             lose.gameObject.SetActive(true);
-            botonSalir.gameObject.SetActive(true);
+            botonSalir.gameObject.SetActive(true); 
         }   
     }
 }

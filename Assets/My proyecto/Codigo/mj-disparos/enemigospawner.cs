@@ -14,7 +14,7 @@ public class Enemigospawner : MonoBehaviour
     void Start()
     {
         Invoke("CrearEnemigo", Random.Range(tiempoRandom.x, tiempoRandom.y)); 
-    }
+    } 
 
     //aparicion del enemigo y de nuevo invocacion
     void CrearEnemigo()

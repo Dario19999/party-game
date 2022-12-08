@@ -9,6 +9,11 @@ public class ScenaController : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void LoadInstrucciones()
+    {
+        SceneManager.LoadScene("Instrucciones");
+    }
+
     public void LoadMinijuegoObstaculos()
     {
         SceneManager.LoadScene("MinijuegoObstaculos");
@@ -34,7 +39,7 @@ public class ScenaController : MonoBehaviour
 
     public void LoadInstruccionesPong()
     {
-        SceneManager.LoadScene("InstruccionesPong");
+        SceneManager.LoadScene("IntruccionesPong");
     }
 
     public void LoadDisparador()
@@ -45,6 +50,11 @@ public class ScenaController : MonoBehaviour
     public void LoadInstruccionesDisparador()
     {
         SceneManager.LoadScene("InstruccionesDisparador");
+    }
+
+    public void LoadInstruccionesLaberinto()
+    {
+        SceneManager.LoadScene("InstruccionesLaberinto");
     }
 
     public void ExitGame()
